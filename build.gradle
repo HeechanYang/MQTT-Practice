@@ -13,4 +13,8 @@ repositories {
 
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
+
+    // rabbitmq
+    compile group: 'com.rabbitmq', name: 'amqp-client', version: '5.7.0'
+
 }
