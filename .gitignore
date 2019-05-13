@@ -9,6 +9,9 @@
 # User-specific stuff
 .idea/**
 
+# Config
+**/Config.java
+
 # Gradle
 .idea/**/gradle.xml
 .idea/**/libraries
