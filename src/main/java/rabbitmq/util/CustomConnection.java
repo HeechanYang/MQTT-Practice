@@ -2,8 +2,6 @@ package rabbitmq.util;
 
 import com.rabbitmq.client.ConnectionFactory;
 
-import static rabbitmq.util.Config.*;
-
 public class CustomConnection {
 
     public static ConnectionFactory getConnectionFactory(){

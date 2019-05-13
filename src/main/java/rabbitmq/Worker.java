@@ -3,6 +3,7 @@ package rabbitmq;
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;
 import com.rabbitmq.client.DeliverCallback;
+import rabbitmq.util.Config;
 import rabbitmq.util.CustomConnection;
 
 import java.io.IOException;
@@ -22,14 +23,16 @@ public class Worker {
                 System.out.println(" [x] Done");
             }
         };
+
         Connection connection = CustomConnection.getConnectionFactory().newConnection();
         Channel channel = connection.createChannel();
         boolean autoAck = true; // acknowledgment is covered below
-        channel.basicConsume("test_queue", autoAck, deliverCallback, consumerTag -> { });
+        channel.basicConsume(Config.MQTT_TEST_QUEUE, autoAck, deliverCallback, consumerTag -> {
+        });
     }
 
     private static void doWork(String task) throws InterruptedException {
-        for (char ch: task.toCharArray()) {
+        for (char ch : task.toCharArray()) {
             if (ch == '.') Thread.sleep(1000);
         }
     }
