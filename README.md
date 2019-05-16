@@ -1,2 +1,2 @@
-# MQTT-Practice
-for MQTT practice
+# MQ Broker Practice
+Repository for MQ Broker Practice
